@@ -9,7 +9,10 @@ cursos = [
 
 @app.get("/")
 async def root():
-    return {"message": "API de Treinamentos"}
+    return {
+        "api": "Treinamentos de Segurança",
+        "status": "online"
+    }
 
 @app.get("/cursos")
 async def listar_cursos():
