@@ -14,3 +14,10 @@ async def root():
 @app.get("/cursos")
 async def listar_cursos():
     return cursos
+
+@app.get("/cursos/{id}")
+async def buscar_curso(id: int):
+    for curso in cursos:
+        if curso["id"] == id:
+            return curso
+    return {"erro": "Curso não encontrado"}
